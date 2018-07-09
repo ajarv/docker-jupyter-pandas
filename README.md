@@ -2,13 +2,18 @@
 
 This is docker image for Python3, Jupyter and Pandas, based on alpine linux
 
+### Build Docker Image
+
+```bash
+docker build -t jupyter-23  .
+```
 
 ### Run
 
 You can run the command below:
 
 ```bash
-docker run -d --name jupyter -p 8888:8888 -v YOU_VOL_FOLDER:/opt playniuniu/jupyter-pandas
+docker run -d --name jupyter -p 8888:8888 -v YOU_VOL_FOLDER:/opt jupyter-23
 ```
 
 and visit [http://localhost:8888](http://localhost:8888) for jupyter notebook
