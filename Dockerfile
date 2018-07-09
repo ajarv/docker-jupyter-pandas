@@ -14,6 +14,9 @@ RUN apk add --no-cache --update ${PACKAGES} ${BUILD_ESSENTIAL} \
     && apk del ${BUILD_ESSENTIAL} \
     && rm -rf /var/cache/apk/* \
     && rm -rf /root/.cache/pip/*
+COPY requirements.txt /tmp
+RUN pip3 --no-cache-dir install -r /tmp/requirements.txt \
+    && rm -rf /root/.cache/pip/*
 
 VOLUME /opt/
 EXPOSE 8888
